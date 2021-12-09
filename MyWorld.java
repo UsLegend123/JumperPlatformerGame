@@ -18,15 +18,15 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 900, 1); 
         
-        addObject(new MasterChief(), getWidth()-740, getHeight()-30);
+        addObject(new MasterChief(), getWidth()-740, getHeight()-32);
         
         Wide wide1 = new Wide();
-        addObject (wide1, getWidth()-660, getHeight()-5);
+        addObject (wide1, getWidth()-663, getHeight()-5);
         
         Wide wide2 = new Wide();
-        addObject (wide2, getWidth()-381, getHeight()-5);
+        addObject (wide2, getWidth()-388, getHeight()-5);
         
         Wide wide3 = new Wide();
-        addObject (wide3, getWidth()-102, getHeight()-5);
+        addObject (wide3, getWidth()-113, getHeight()-5);
     }
 }
