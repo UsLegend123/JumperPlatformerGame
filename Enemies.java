@@ -6,14 +6,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Enemies extends Actor
+public class Enemies extends Mover
 {
-    /**
-     * Act - do whatever the Enemies wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
+    private int stability = 150;
+    
+    public int getStability()
     {
-        // Add your action code here.
+        return stability;
+    }
+    
+    public void getHit(int damage)
+    {
+        stability = stability - damage;
+        if (stability <=0)
+        {
+            getWorld().removeObject(this);
+        }
     }
 }

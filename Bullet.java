@@ -6,14 +6,46 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends Actor
+public class Bullet extends Mover
 {
-    /**
-     * Act - do whatever the Bullet wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int life = 85;
+    private int damage = 15;
+    
+    public Bullet()
+    {
+        
+    }
+    
     public void act()
     {
-        // Add your action code here.
+        movementOfBullet();
+        getLife();
+    }
+    
+    public void movementOfBullet()
+    {
+        setLocation(getX() + 10, getY());
+    }
+    
+    public void getLife()
+    {
+        if(life <= 0)
+        {
+            getWorld().removeObject(this);
+        }
+        else
+        {
+            move(0);
+            Enemies enemies = (Enemies)getOneIntersectingObject(Enemies.class);
+            if (enemies != null)
+            {
+                getWorld().removeObject(this);
+                enemies.getHit(damage);
+            }
+            else
+            {
+                life--;
+            }
+        }
     }
 }
