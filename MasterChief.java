@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MasterChief extends Mover
+public class MasterChief extends Actor
 {
     private int gunReloadTime = 7;
     private int reloadDelayCount = 0;
@@ -115,7 +115,7 @@ public class MasterChief extends Mover
     {
         if (reloadDelayCount >= gunReloadTime) 
         {
-            getWorld().addObject(new Bullet(), getX()+30, getY()-2);
+            getWorld().addObject(new Mbullet(), getX()+30, getY()-2);
             reloadDelayCount = 0;
         }
     }
