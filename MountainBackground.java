@@ -8,14 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MountainBackground extends World
 {
-    /**
-     * Constructor for objects of class MountainBackground.
-     * 
-     */
     public MountainBackground()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 600, 1); 
+        
+        Greenfoot.playSound("HaloTheme.mp3");
         
         addObject(new MasterChief(), getWidth()-825, getHeight()-35);
         
@@ -54,6 +52,8 @@ public class MountainBackground extends World
         
         addObject(new Grunt(), getWidth()-740, getHeight()-274);
         
-        addObject(new BlueElite(), getWidth()-240, getHeight()-357);
+        addObject(new RedElite(), getWidth()-240, getHeight()-357);
+        
+        addObject(new Portal(), getWidth()-50, getHeight()-372);
     }
 }

@@ -5,4 +5,6 @@ comment1.params=
 comment1.target=int\ getStability()
 comment2.params=damage
 comment2.target=void\ getHit(int)
-numComments=3
+comment3.params=
+comment3.target=void\ getMovement()
+numComments=4

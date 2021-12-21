@@ -14,6 +14,8 @@ public class MasterChief extends Actor
     private int vSpeed = 0;
     private int acceleration = 1;
     private int jumpStrength = 13;
+    private int stability = 500;
+     //MasterChief = new ("MasterChief2.png");
     
     public void act() 
     {
@@ -22,6 +24,7 @@ public class MasterChief extends Actor
         checkFall();
         checkForVoid();
         reloadDelayCount++;
+        getTeleportation();
     }
     
     public void checkKeys()
@@ -30,7 +33,6 @@ public class MasterChief extends Actor
         {
             moveRight();
         }
-        
         if (Greenfoot.isKeyDown("left"))
         {
             moveLeft();
@@ -53,6 +55,7 @@ public class MasterChief extends Actor
     public void moveLeft()
     {
         setLocation (getX() - speed, getY());
+        setImage(MasterChief2.getCurrentImage());
     }
     
     public void fall()
@@ -100,10 +103,37 @@ public class MasterChief extends Actor
     
     public void checkForVoid()
     {
-        if (getY() >= 505 || getY() >= getWorld().getHeight()-1)
+        if (getY() >= 599 || getY() >= getWorld().getHeight()-1)
         {
-            setLocation(75,459);
+            setLocation(75,560);
         }
+    }
+    
+    public void getHit(int damage)
+    {
+        stability = stability - damage;
+        if (stability <=0)
+        {
+            getWorld().removeObject(this);
+        }
+    }
+    
+    public void getTeleportation()
+    {
+       Portal p = (Portal)getOneIntersectingObject(Portal.class); 
+       if(p != null)
+       {
+          Greenfoot.setWorld(new MountainBackground2());
+       }
+    }
+    
+    public void getWin()
+    {
+       Cortana c = (Cortana)getOneIntersectingObject(Cortana.class); 
+       if(c != null)
+       {
+          Greenfoot.setWorld(new MountainBackground2());
+       }
     }
     
     public void setGunReloadTime(int reloadTime)
@@ -115,8 +145,9 @@ public class MasterChief extends Actor
     {
         if (reloadDelayCount >= gunReloadTime) 
         {
-            getWorld().addObject(new Mbullet(), getX()+30, getY()-2);
+            getWorld().addObject(new Mbullet(), getX(), getY());
             reloadDelayCount = 0;
+            Greenfoot.playSound("MGunFire.mp3");
         }
     }
 }

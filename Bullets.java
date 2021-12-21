@@ -17,4 +17,14 @@ public class Bullets extends Actor
     {
         setLocation(getX() + 10, getY());
     }
+    
+    public void turn()
+    {
+        turn(180);
+    }
+    
+    public void turn(int angle)
+    {
+        setRotation(getRotation() + angle);
+    }
 }

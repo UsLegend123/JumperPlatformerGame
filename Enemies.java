@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Enemies extends Actor
 {
     private int stability = 150;
+    private int X = 1;
     
     public int getStability()
     {
@@ -21,6 +22,15 @@ public class Enemies extends Actor
         if (stability <=0)
         {
             getWorld().removeObject(this);
+        }
+    }
+    
+    public void getMovement()
+    {
+        setLocation(getX() + X, getY());
+        if ((getX() >  850) || (getX() < 10))
+        {
+            X = X *-1;
         }
     }
 }

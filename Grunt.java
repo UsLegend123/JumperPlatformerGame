@@ -8,12 +8,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Grunt extends Enemies
 {
-    /**
-     * Act - do whatever the Grunt wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int gunReloadTime = 35;
+    private int reloadDelayCount = 0;
+    
     public void act()
     {
-        // Add your action code here.
+        getMovement();
+        reloadDelayCount++;
+        getFire();
+    }
+    
+    public void setGunReloadTime(int reloadTime)
+    {
+        gunReloadTime = reloadTime;
+    }
+    
+    public void getFire()
+    {
+        if (reloadDelayCount >= gunReloadTime) 
+        {
+            getWorld().addObject(new Gbullet(), getX(), getY());
+            reloadDelayCount = 0;
+            Greenfoot.playSound("GGunFire.mp3");
+        }
     }
 }

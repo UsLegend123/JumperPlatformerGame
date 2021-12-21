@@ -8,12 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Mbullet extends Bullets
 {
-    private int damage = 15;
+    private int damage = 20;
     
     public void act()
     {
         movementOfBullet();
         getDamage();
+        move(10);
     }
     
     public void getDamage()

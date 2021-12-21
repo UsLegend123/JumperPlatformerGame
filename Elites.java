@@ -8,12 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elites extends Enemies
 {
-    /**
-     * Act - do whatever the Elites wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int gunReloadTime = 7;
+    private int reloadDelayCount = 0;
+    
     public void act()
     {
-        // Add your action code here.
+        reloadDelayCount++;
+    }
+    
+    public void setGunReloadTime(int reloadTime)
+    {
+        gunReloadTime = reloadTime;
+    }
+    
+    public void getFire()
+    {
+        if (reloadDelayCount >= gunReloadTime) 
+        {
+            getWorld().addObject(new Ebullet(), getX(), getY());
+            reloadDelayCount = 0;
+            Greenfoot.playSound("EGunFire.mp3");
+        }
     }
 }
