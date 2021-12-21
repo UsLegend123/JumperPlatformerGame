@@ -72,25 +72,19 @@ public class MountainBackground2 extends World
         Wide wide19 = new Wide();
         addObject (wide19, getWidth()-150, getHeight()-490);
         
-        addObject(new Grunt(), getWidth()-100, getHeight()-96);
+        addObject(new Grunt(), getWidth()-50, getHeight()-96);
         
-        addObject(new Grunt(), getWidth()-750, getHeight()-446);
+        addObject(new Grunt(), getWidth()-100, getHeight()-256);
         
-        addObject(new Grunt(), getWidth()-450, getHeight()-446);
+        addObject(new Grunt(), getWidth()-225, getHeight()-446);
         
-        addObject(new Grunt(), getWidth()-300, getHeight()-446);
+        addObject(new Grunt(), getWidth()-80, getHeight()-446);
         
-        addObject(new Grunt(), getWidth()-150, getHeight()-446);
+        addObject(new BlueElite(), getWidth()-700, getHeight()-454);
         
-        addObject(new Grunt(), getWidth()-600, getHeight()-446);
+        addObject(new BlueElite(), getWidth()-840, getHeight()-264);
         
-        addObject(new RedElite(), getWidth()-750, getHeight()-524);
-        
-        addObject(new RedElite(), getWidth()-150, getHeight()-524);
-        
-        addObject(new BlueElite(), getWidth()-780, getHeight()-264);
-        
-        addObject(new BlueElite(), getWidth()-130, getHeight()-264);
+        addObject(new RedElite(), getWidth()-825, getHeight()-454);
         
         addObject(new Cortana(), getWidth()-450, getHeight()-570);
     }

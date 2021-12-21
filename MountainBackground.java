@@ -44,15 +44,13 @@ public class MountainBackground extends World
         Wide2 wide9 = new Wide2();
         addObject (wide9, getWidth()-60, getHeight()-325);
         
-        addObject(new Grunt(), getWidth()-400, getHeight()-94);
+        addObject(new Grunt(), getWidth()-350, getHeight()-94);
         
         addObject(new Grunt(), getWidth()-60, getHeight()-94);
         
-        addObject(new Grunt(), getWidth()-250, getHeight()-194);
+        addObject(new Grunt(), getWidth()-220, getHeight()-194);
         
-        addObject(new Grunt(), getWidth()-740, getHeight()-274);
-        
-        addObject(new RedElite(), getWidth()-240, getHeight()-357);
+        addObject(new RedElite(), getWidth()-790, getHeight()-282);
         
         addObject(new Portal(), getWidth()-50, getHeight()-372);
     }

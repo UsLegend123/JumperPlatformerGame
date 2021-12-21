@@ -8,12 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Grunt extends Enemies
 {
-    private int gunReloadTime = 35;
+    private int gunReloadTime = 75;
     private int reloadDelayCount = 0;
     
     public void act()
     {
-        getMovement();
         reloadDelayCount++;
         getFire();
     }
@@ -27,7 +26,7 @@ public class Grunt extends Enemies
     {
         if (reloadDelayCount >= gunReloadTime) 
         {
-            getWorld().addObject(new Gbullet(), getX(), getY());
+            getWorld().addObject(new Gbullet(), getX()-19, getY()-2);
             reloadDelayCount = 0;
             Greenfoot.playSound("GGunFire.mp3");
         }

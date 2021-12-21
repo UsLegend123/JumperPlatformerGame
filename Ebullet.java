@@ -6,14 +6,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ebullet extends Bullets
+public class Ebullet extends Actor
 {
-    private int damage = 10;
+    private int damage = 15;
     
     public void act()
     {
-       movementOfBullet();
-       getDamage();
+        movementOfBullet();
+        getDamage();
+    }
+    
+    public void movementOfBullet()
+    {
+        setLocation (getX()+10, getY());
     }
     
     public void getDamage()

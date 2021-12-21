@@ -6,15 +6,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mbullet extends Bullets
+public class Mbullet extends Actor
 {
     private int damage = 20;
     
     public void act()
     {
-        movementOfBullet();
+        getFireMovement();
         getDamage();
-        move(10);
+    }
+    
+    public void getFireMovement()
+    {
+        setLocation (getX()+10, getY());
     }
     
     public void getDamage()
