@@ -48,29 +48,20 @@ public class MountainBackground2 extends World
         Wide wide11 = new Wide();
         addObject (wide11, getWidth()-300, getHeight()-325);
         
-        Wide wide12 = new Wide();
-        addObject (wide12, getWidth()-450, getHeight()-420);
-        
         Wide wide13 = new Wide();
         addObject (wide13, getWidth()-110, getHeight()-420);
         
         Wide wide14 = new Wide();
         addObject (wide14, getWidth()-790, getHeight()-420);
         
-        Wide wide15 = new Wide();
-        addObject (wide15, getWidth()-650, getHeight()-420);
-        
-        Wide wide16 = new Wide();
-        addObject (wide16, getWidth()-250, getHeight()-420);
-        
         Wide wide17 = new Wide();
         addObject (wide17, getWidth()-450, getHeight()-530);
         
         Wide wide18 = new Wide();
-        addObject (wide18, getWidth()-750, getHeight()-490);
+        addObject (wide18, getWidth()-750, getHeight()-520);
         
         Wide wide19 = new Wide();
-        addObject (wide19, getWidth()-150, getHeight()-490);
+        addObject (wide19, getWidth()-150, getHeight()-520);
         
         addObject(new Grunt(), getWidth()-50, getHeight()-96);
         
@@ -86,6 +77,6 @@ public class MountainBackground2 extends World
         
         addObject(new RedElite(), getWidth()-825, getHeight()-454);
         
-        addObject(new Cortana(), getWidth()-450, getHeight()-570);
+        addObject(new Cortana(), getWidth()-450, getHeight()-575);
     }
 }

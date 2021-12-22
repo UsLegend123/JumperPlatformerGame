@@ -8,15 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MasterChief extends Actor
 {
-    private int gunReloadTime = 7; //The amount of time spent on reloading and shooting again.
-    private int reloadDelayCount = 0; //The Countdown time before you shoot.
-    private int speed = 5; //How fast you can run.
-    private int vSpeed = 0; //The starting point of your fall.
-    private int acceleration = 1; //The acceleration of your fall.
-    private int jumpStrength = 13; //How high you can jump.
-    private int stability = 500; //The amount of hitpoints/health you have.
+    private int gunReloadTime = 7; // The amount of time spent on reloading and shooting again.
+    private int reloadDelayCount = 0; // The Countdown time before you shoot.
+    private int speed = 5; // How fast you can run.
+    private int vSpeed = 0; // The starting point of your fall.
+    private int acceleration = 1; // The acceleration of your fall.
+    private int jumpStrength = 13; // How high you can jump.
+    private int stability = 500; // The amount of hitpoints/health you have.
     private GreenfootImage image1;
     private GreenfootImage image2;
+    
     
     /**
      * Creating my images for my MasterChief
@@ -72,6 +73,7 @@ public class MasterChief extends Actor
         setLocation (getX() + speed, getY());
         setImage(image2);
     }
+    
     /**
      * How to move left
      */
@@ -171,6 +173,7 @@ public class MasterChief extends Actor
        Portal p = (Portal)getOneIntersectingObject(Portal.class); 
        if(p != null)
        {
+          Greenfoot.playSound("Teleport.mp3");
           Greenfoot.setWorld(new MountainBackground2());
        }
     }
@@ -194,6 +197,7 @@ public class MasterChief extends Actor
     {
         gunReloadTime = reloadTime;
     }
+    
     /**
      * When the reload time is done it will spawn in a bullet
      */
